@@ -24,12 +24,29 @@ var insertData = function(arr){
 	};
 }
 
-$('#addUser').on('click', function(){
+$('#addUser').on('click', function(e){
+	e.preventDefault();
 	var userName = $('#name').val();
 	var userJob = $('#job').val();
 	return $.ajax({
-		method: 'POST',
+		method: 'POST', 
 		url: 'http://reqr.es/api/users',
-		data: {name: userName, job: userJob}
+		data: {name: userName, job: userJob},  //data lets us pass specific information to the API via our request
+		success: function(res) {
+			$('#recentUSer').html(
+				'<li>' +
+				'name: ' + res.name +
+				'</li>' +
+				'<li>' +
+				'job: ' + res.job +
+				'</li>' +
+				'<li>'
+				'id: ' + res.id +
+				'</li>' +
+				'<li>' +
+				'created at: ' + res.createdAt +
+				'</li>'
+			)
+		}
 	})
 });
