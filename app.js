@@ -1,9 +1,12 @@
+$(document).ready(function(){
+
 $('#getUsers').on('click', function(){
 	return $.ajax({
 		method: 'GET',
 		url: 'http://reqr.es/api/users?page=1',
 		success: function(res){
 			console.log(res);
+			insertData(res.data);
 		}
 	});
 });
@@ -49,4 +52,5 @@ $('#addUser').on('click', function(e){
 			)
 		}
 	})
+});
 });
