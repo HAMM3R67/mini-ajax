@@ -27,4 +27,9 @@ var insertData = function(arr){
 $('#addUser').on('click', function(){
 	var userName = $('#name').val();
 	var userJob = $('#job').val();
+	return $.ajax({
+		method: 'POST',
+		url: 'http://reqr.es/api/users',
+		data: {name: userName, job: userJob}
+	})
 });
