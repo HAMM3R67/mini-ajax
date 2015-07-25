@@ -23,3 +23,8 @@ var insertData = function(arr){
 			)
 	};
 }
+
+$('#addUser').on('click', function(){
+	var userName = $('#name').val();
+	var userJob = $('#job').val();
+});
