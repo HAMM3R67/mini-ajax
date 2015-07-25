@@ -36,7 +36,7 @@ $('#addUser').on('click', function(e){
 		url: 'http://reqr.es/api/users',
 		data: {name: userName, job: userJob},  //data lets us pass specific information to the API via our request
 		success: function(res) {
-			$('#recentUSer').html(
+			$('#recentUser').html(
 				'<li>' +
 				'name: ' + res.name +
 				'</li>' +
