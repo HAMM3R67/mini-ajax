@@ -40,7 +40,7 @@ $('#addUser').on('click', function(e){
 				'<li>' +
 				'job: ' + res.job +
 				'</li>' +
-				'<li>'
+				'<li>' +
 				'id: ' + res.id +
 				'</li>' +
 				'<li>' +
